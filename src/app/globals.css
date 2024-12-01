@@ -1,42 +1,91 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+  font-family: 'Arial', sans-serif;
   margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #201f1f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+h1 {
+  margin-top: 20px;
+  color: #277913;
+  text-align: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+h2 {
+  margin-top: 20px;
+  color: #277913;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+li {
+  background-color: #ffffff;
+  margin: 10px 0;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #3a9d3f;
+  background-color: #e5f7e1;
+  outline: none;
+  box-shadow: 0 0 5px rgba(58, 157, 63, 0.5);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #107d08;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #04a508;
+  transform: translateY(-2px); /* Легке підняття кнопки при наведенні */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
