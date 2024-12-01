@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { addUser } from '@/api/userApi';
 
 type User = {
     id: number;
@@ -20,19 +21,10 @@ export function UserList({ initialUsers }: Props) {
     const handleAddUser = async (event: React.FormEvent) => {
         event.preventDefault();
         if (name && email) {
-            const response = await fetch('/api/users', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email }),
-            });
-            if (response.ok) {
-                const newUser = await response.json();
-                setUsers([...users, newUser]);
-                setName('');
-                setEmail('');
-            } else {
-                console.error('Failed to add user');
-            }
+            const newUser = await addUser({ name, email });
+            setUsers([...users, newUser]);
+            setName('');
+            setEmail('');
         }
     };
 
